@@ -131,13 +131,3 @@ app.delete(
     return response.status(204).json(user.todos);
   }
 );
-
-app.get("/todos", checksExistsUserAccount, (request, response) => {
-  const { username } = request;
-
-  const user = users.find((user) => user.username === username);
-
-  return repsonse.json(user.todos);
-});
-
-module.exports = app;
